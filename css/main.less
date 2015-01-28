@@ -1,0 +1,228 @@
+@charset "UTF-8";
+@import "reset";
+@width: 100%;
+
+
+//----------------------set-----------------------------------
+.marginTop(@marginTop){
+	margin-top: @marginTop;
+}
+.marginLeft(@marginLeft){
+	margin-left: @marginLeft;
+}
+.marginRight(@marginRight){
+	margin-right: @marginRight;
+}
+.marginBottom(@marginBottom){
+	margin-bottom: @marginBottom;
+}
+
+.boder(top,@color){
+	border-top: 1px solid @color;
+}
+
+.boder(bottom,@color){
+	border-bottom: 1px solid @color;
+}
+
+.border(all,@color){
+	border: 1px solid @color;
+}
+
+.transition(@time:0.5s){
+	-webkit-transition: background-color @time;
+	-moz-transition: background-color @time;
+	transition: background-color @time;
+}
+
+.transition_color(@time:0.5s){
+	-webkit-transition: color @time;
+	-moz-transition: color @time;
+	transition: color @time;
+}
+.position(a){
+	position: absolute;
+}
+
+.position(r){
+	position: relative;
+}
+
+body{
+	background: #edeff0;
+	font-family: 'メイリオ',Meiryo,'ＭＳ Ｐゴシック','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif;
+}
+
+//----------------------------------- top animation --------------------------------------//
+.animation{
+	background: rgba(0,0,0,1);
+	width: 100%;
+	height: 100%;
+	.position(a);
+	z-index: 1000;
+	overflow: hidden;
+	img{
+		.position(r);
+	}
+
+	p{
+		text-align: center;
+		display: none;
+		color: #FFF;
+		font-size: 20px;
+	}
+}
+
+//-----------------------------------  header start---------------------------------------//
+.header{
+	background:#000;
+	width: @width;
+	height:60px;
+	
+
+	&_inner{
+		width:@width - 20;
+		min-width: 900px;
+		margin: 0 auto;
+	}
+
+	&_logo{
+		width: 50px;
+		float: left;
+		.marginTop(5px);
+		.marginRight(100px);
+
+		& img{
+			width: @width;
+		}
+	}
+
+	&_nav{
+		width: @width - 20;
+	}
+
+	&_nav li{
+		width:100px;
+		float: left;
+		line-height:60px;
+		.marginLeft(10px);
+
+	}
+
+	&_nav a{
+		color: #787d82;
+		text-align: center;
+		display:block;
+		text-decoration: none;
+		.transition(@time:0.5s);
+		&:hover{
+			color: #FFF;
+			background: #787d82;
+			.transition_color(@time:0.6s); 
+		}
+	}
+
+	input{
+		background: #363c41;
+		color: #14191e;
+		.transition(@time:0.5s);
+	}
+
+	.search{
+		@width:30px;
+		@height:@width;
+		
+		float: right;
+		.marginTop(15px); 
+		
+
+		&_words{
+			width: 260px;
+			height: @height;
+			padding: 10px;
+			&:focus{
+				background: #FFF;
+			}
+		}
+
+		&_btn{
+			vertical-align: bottom;
+			background: url(../img/gsearch-sprite.png) no-repeat 0 0;
+		  	cursor: pointer;
+		  	width: @width;
+		  	height: @height;
+		   .marginLeft(-40px);
+		}
+	}
+}
+
+//-----------------------------------  header end---------------------------------------//
+
+//-----------------------------------  contents start ----------------------------------//
+//sample test
+
+.sample{
+	opacity: 0;
+}
+
+
+//contact
+.container{
+	.marginTop(40px);
+	background: #fff;
+	color: #000;
+	padding: 20px;
+
+	.contact{
+		opacity: 0;
+	}
+
+	h1{
+		font-size: 20px;
+		line-height: 2em;
+		padding: 10px;
+	}
+
+	.form{
+		padding: 10px;
+		width: 800px;
+		.marginTop(20px);
+		& input{
+			width: @width;
+			height: 40px;
+			background: #F8F8F8;
+		}
+
+		& p,span{
+			color: red;
+		}
+
+		.btn{
+			width: @width;
+			height: 50px;
+			.marginTop(10px);
+			background: #333 - 20;
+			&:hover{
+				background: #333;
+			}
+		}
+
+		.btn-primary{
+			border-color: #333 - 10;
+		}
+
+		.error{
+			.marginTop(5px);
+		}
+
+		label{
+			.marginBottom(10px);
+		}
+
+		textarea{
+			height: 200px;
+		}
+	}
+}
+
+//-----------------------------------  contents end ----------------------------------//
